@@ -1,0 +1,52 @@
+name: 'Gridwork Site Audit'
+description: 'Audit your website for accessibility (WCAG/EAA), performance, SEO, design, and mobile on every deploy'
+author: 'Gridwork'
+
+branding:
+  icon: 'check-circle'
+  color: 'white'
+
+inputs:
+  url:
+    description: 'URL to audit'
+    required: true
+  threshold:
+    description: 'Minimum overall score (0-100). Action fails if score is below this.'
+    required: false
+    default: '0'
+  categories:
+    description: 'Categories to check threshold against (comma-separated: accessibility,performance,seo,design,mobile)'
+    required: false
+    default: 'accessibility'
+  fail-on-eaa:
+    description: 'Fail if EAA compliance status is non-compliant'
+    required: false
+    default: 'false'
+  comment:
+    description: 'Post audit results as a PR comment'
+    required: false
+    default: 'true'
+
+outputs:
+  overall-score:
+    description: 'Overall audit score (0-100)'
+  overall-grade:
+    description: 'Overall grade (A-F)'
+  accessibility-score:
+    description: 'Accessibility score'
+  performance-score:
+    description: 'Performance score'
+  seo-score:
+    description: 'SEO score'
+  design-score:
+    description: 'Design score'
+  mobile-score:
+    description: 'Mobile score'
+  eaa-status:
+    description: 'EAA compliance status (compliant/partial/non-compliant)'
+  report-url:
+    description: 'URL to the full shareable report'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

@@ -1,0 +1,23 @@
+{
+  "name": "gridwork-siteaudit-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to audit websites for accessibility, performance, SEO on every deploy",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts --out dist --minify",
+    "dev": "tsx src/index.ts"
+  },
+  "author": "Gridwork <thegridwork@proton.me>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.0",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vercel/ncc": "^0.38.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
