@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
 
-const API_BASE = "https://gridwork-siteaudit.spring-night-df19.workers.dev";
+const API_BASE = "https://siteaudit.thegridwork.space";
 
 interface QuickCheckResult {
   success: boolean;
